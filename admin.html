@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>لوحة تحكم MA Moments</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/header-component.js" defer></script>
+    <script src="js/product-store.js" defer></script>
+    <script src="js/admin.js" defer></script>
+</head>
+
+<body class="admin-dashboard-body">
+    <ma-header></ma-header>
+    <main class="admin-dashboard">
+        <aside class="admin-sidebar">
+            <div class="admin-brand-block">
+                <strong>MA Moments</strong>
+                <span>لوحة إدارة المتجر</span>
+            </div>
+            <nav class="admin-nav" aria-label="أقسام لوحة التحكم">
+                <button class="admin-nav-button active" data-admin-tab="dashboard" type="button">لوحة التحكم</button>
+                <button class="admin-nav-button" data-admin-tab="products" type="button">المنتجات</button>
+                <button class="admin-nav-button" data-admin-tab="add-product" type="button">إضافة منتج</button>
+                <button class="admin-nav-button" data-admin-tab="backup" type="button">النسخ الاحتياطي</button>
+            </nav>
+            <a class="admin-store-link" href="index.html">فتح واجهة المتجر</a>
+        </aside>
+
+        <section class="admin-workspace">
+            <header class="admin-topbar">
+                <div>
+                    <p class="admin-eyebrow">MA Moments Startup</p>
+                    <h1 id="adminPageTitle">لوحة التحكم</h1>
+                </div>
+                <button class="primary-button" id="quickAddProduct" type="button">+ إضافة منتج</button>
+            </header>
+
+            <section class="admin-tab-panel active" data-panel="dashboard">
+                <div class="admin-stats-grid">
+                    <article class="admin-stat-card"><span>إجمالي المنتجات</span><strong id="statProducts">0</strong><small>منتج داخل المتجر</small></article>
+                    <article class="admin-stat-card"><span>المنتجات النشطة</span><strong id="statActive">0</strong><small>ظاهرة للعملاء</small></article>
+                    <article class="admin-stat-card"><span>المنتجات المميزة</span><strong id="statFeatured">0</strong><small>جاهزة للواجهة الرئيسية</small></article>
+                    <article class="admin-stat-card"><span>إجمالي المخزون</span><strong id="statStock">0</strong><small>قطعة متوفرة</small></article>
+                </div>
+                <section class="admin-panel dashboard-section">
+                    <div class="admin-section-heading">
+                        <div>
+                            <h2>أحدث المنتجات</h2>
+                            <p>آخر المنتجات التي تمت إضافتها أو تحديثها.</p>
+                        </div>
+                        <button class="secondary-button" data-go-products type="button">إدارة المنتجات</button>
+                    </div>
+                    <div id="recentProducts" class="admin-products-list compact"></div>
+                </section>
+            </section>
+
+            <section class="admin-tab-panel" data-panel="products">
+                <section class="admin-panel">
+                    <div class="admin-section-heading">
+                        <div>
+                            <h2>إدارة المنتجات</h2>
+                            <p>تعديل، حذف، تفعيل، ومراجعة جميع المنتجات.</p>
+                        </div>
+                        <div class="admin-list-tools">
+                            <input id="adminProductSearch" type="search" placeholder="ابحثي باسم المنتج أو القسم...">
+                            <select id="adminCategoryFilter"><option value="">كل الأقسام</option></select>
+                        </div>
+                    </div>
+                    <div id="adminProductsList" class="admin-products-list"></div>
+                </section>
+            </section>
+
+            <section class="admin-tab-panel" data-panel="add-product">
+                <section class="admin-panel">
+                    <div class="admin-heading">
+                        <p class="admin-eyebrow">إدارة الكتالوج</p>
+                        <h2 id="formTitle">إضافة منتج جديد</h2>
+                        <p>أضيفي أو عدّلي المنتج كاملًا بدون الرجوع إلى الكود.</p>
+                    </div>
+                    <form id="productForm" class="admin-form pro-admin-form">
+                        <input id="editingId" type="hidden">
+                        <label>اسم المنتج<input id="productName" required></label>
+                        <label>رمز المنتج SKU<input id="productSku" placeholder="مثال: PJ-001"></label>
+                        <label>القسم<select id="productCategory" required></select></label>
+                        <label>الحالة<select id="productStatus"><option value="active">نشط</option><option value="draft">مسودة</option></select></label>
+                        <label>السعر الحالي بالشيكل<input id="productPrice" type="number" min="0" step="0.01" required></label>
+                        <label>السعر قبل الخصم<input id="productOriginalPrice" type="number" min="0" step="0.01" placeholder="اختياري"></label>
+                        <label>المخزون<input id="productStock" type="number" min="0" step="1" value="0"></label>
+                        <label>الخامة<input id="productMaterial" placeholder="مثال: قطن"></label>
+                        <label class="full-field">الوصف<textarea id="productDescription" rows="4" required></textarea></label>
+                        <label class="full-field">الكلمات المفتاحية للبحث الذكي<input id="productTags" placeholder="بيجامة، صيفية، ناعمة، وردية"></label>
+                        <label class="full-field">كلمات Dupe Shopping<input id="productSimilarTo" placeholder="زارا، شي إن، فيكتوريا سيكريت"></label>
+                        <label class="full-field">صور المنتج
+              <input id="productImage" type="file" accept="image/*" multiple>
+              <small>اختاري أكثر من صورة. يمكنك حذف أي صورة أو تعيين صورة أخرى كرئيسية.</small>
+              <div id="imagePreview" class="admin-image-preview"></div>
+            </label>
+                        <fieldset class="full-field sizes-field">
+                            <legend>المقاسات</legend>
+                            <label><input type="checkbox" name="sizes" value="XS"> XS</label><label><input type="checkbox" name="sizes" value="S"> S</label><label><input type="checkbox" name="sizes" value="M"> M</label><label><input type="checkbox" name="sizes" value="L"> L</label><label><input type="checkbox" name="sizes" value="XL"> XL</label><label><input type="checkbox" name="sizes" value="XXL"> XXL</label>
+                            <label><input type="checkbox" name="sizes" value="XXXL"> XXXL</label>
+                        </fieldset>
+                        <label class="full-field">الألوان<input id="productColors" placeholder="وردي:#e8a0b6، أسود:#111111" required><small>اكتبي اسم اللون ويمكن إضافة كود اللون بعد النقطتين.</small></label>
+                        <div class="full-field admin-switches">
+                            <label class="admin-switch"><input id="productFeatured" type="checkbox"><span>منتج مميز</span></label>
+                            <label class="admin-switch"><input id="productHomepage" type="checkbox"><span>إظهاره في الصفحة الرئيسية</span></label>
+                        </div>
+                        <div class="full-field admin-form-actions"><button class="primary-button" type="submit" id="saveButton">حفظ المنتج</button><button class="secondary-button" type="button" id="cancelEdit" hidden>إلغاء التعديل</button></div>
+                    </form>
+                </section>
+            </section>
+
+            <section class="admin-tab-panel" data-panel="backup">
+                <section class="admin-panel backup-panel">
+                    <h2>النسخ الاحتياطي للمنتجات</h2>
+                    <p>صدّري بيانات المنتجات إلى ملف JSON أو استوردي نسخة محفوظة سابقًا.</p>
+                    <div class="backup-actions"><button class="primary-button" id="exportProducts" type="button">تصدير البيانات</button><label class="secondary-button file-import-button">استيراد البيانات<input id="importProducts" type="file" accept="application/json"></label>
+                        <button class="danger-button" id="resetProducts" type="button">استعادة المنتجات الافتراضية</button>
+                    </div>
+                    <p class="admin-notice">هذه النسخة تحفظ البيانات داخل المتصفح. عند ربط Backend حقيقي ستنتقل البيانات إلى قاعدة بيانات مركزية.</p>
+                </section>
+            </section>
+        </section>
+    </main>
+</body>
+
+</html>

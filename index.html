@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="MA Moments - متجر للهدايا والمنتجات المميزة">
+
+    <title>MA Moments | الصفحة الرئيسية</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/slider.css">
+
+    <script src="js/header-component.js" defer></script>
+    <script src="js/slider.js" defer></script>
+</head>
+
+<body>
+    <main>
+
+        <!-- =====================================
+             Hero Slider
+        ====================================== -->
+
+        <section class="hero-slider" id="heroSlider" aria-label="إعلانات وعروض MA Moments" tabindex="0">
+
+            <ma-header></ma-header>
+
+            <nav class="store-categories" aria-label="أقسام المتجر">
+                <div class="store-categories-container">
+                    <a href="products.html" class="category-link active" data-category="all">الكل</a>
+                    <a href="products.html?category=pajamas" class="category-link" data-category="pajamas">بيجامات</a>
+                    <a href="products.html?category=work-sets" class="category-link" data-category="work-sets">أطقم عملية</a>
+                    <a href="products.html?category=plus-size" class="category-link" data-category="plus-size">مقاسات كبيرة</a>
+                    <a href="products.html?category=beauty" class="category-link" data-category="beauty">تجميل</a>
+                    <a href="products.html?category=cups" class="category-link" data-category="cups">أكواب</a>
+                    <a href="products.html?category=candles" class="category-link" data-category="candles">شموع</a>
+                    <a href="products.html?category=stationery" class="category-link" data-category="stationery">مستلزمات مكتبية</a>
+                    <a href="products.html?category=happiness-boxes" class="category-link" data-category="happiness-boxes">بوكسات السعادة</a>
+                </div>
+            </nav>
+
+            <div class="slider-track">
+
+                <!-- الإعلان الأول -->
+
+                <article class="hero-slide active">
+                    <img src="images/slider/banner1.jpg" alt="تنسيقات هدايا مميزة من MA Moments" class="slide-image">
+
+                    <div class="slide-overlay"></div>
+
+                    <div class="slide-content">
+                        <span class="slide-label">
+                            تشكيلة مميزة
+                        </span>
+
+                        <h1>
+                            لأن كل لحظة
+                            <span>تستحق أن تُهدى</span>
+                        </h1>
+
+                        <p>
+                            اكتشفي أجمل تنسيقات الهدايا المصممة بحب لكل شخص ومناسبة.
+                        </p>
+
+                        <a href="products.html" class="slide-button">
+                            تسوقي الآن
+                        </a>
+                    </div>
+                </article>
+
+                <!-- الإعلان الثاني -->
+
+                <article class="hero-slide">
+                    <img src="images/slider/banner2.jpg" alt="مجموعة العطور والإكسسوارات" class="slide-image">
+
+                    <div class="slide-overlay"></div>
+
+                    <div class="slide-content">
+                        <span class="slide-label">
+                            أناقة التفاصيل
+                        </span>
+
+                        <h2>
+                            لمسات صغيرة
+                            <span>تصنع فرقًا كبيرًا</span>
+                        </h2>
+
+                        <p>
+                            عطور وإكسسوارات مميزة تضيف لمسة خاصة إلى إطلالتك وهديتك.
+                        </p>
+
+                        <a href="products.html?category=accessories" class="slide-button">
+                            اكتشفي المجموعة
+                        </a>
+                    </div>
+                </article>
+
+                <!-- الإعلان الثالث -->
+
+                <article class="hero-slide">
+                    <img src="images/slider/banner3.jpg" alt="مجموعة الملابس الجديدة" class="slide-image">
+
+                    <div class="slide-overlay"></div>
+
+                    <div class="slide-content">
+                        <span class="slide-label">
+                            وصل حديثًا
+                        </span>
+
+                        <h2>
+                            إطلالات أنثوية
+                            <span>لكل لحظة</span>
+                        </h2>
+
+                        <p>
+                            اكتشفي تشكيلتنا الجديدة من الملابس بتصاميم عصرية ومريحة.
+                        </p>
+
+                        <a href="products.html?category=clothes" class="slide-button">
+                            شاهدي الجديد
+                        </a>
+                    </div>
+                </article>
+
+                <!-- الإعلان الرابع -->
+
+                <article class="hero-slide">
+                    <img src="images/slider/banner4.jpg" alt="عروض وخصومات MA Moments" class="slide-image">
+
+                    <div class="slide-overlay"></div>
+
+                    <div class="slide-content">
+                        <span class="slide-label">
+                            لفترة محدودة
+                        </span>
+
+                        <h2>
+                            عروض مميزة
+                            <span>لا تفوّتيها</span>
+                        </h2>
+
+                        <p>
+                            استفيدي من الخصومات والعروض الخاصة على مجموعة مختارة من المنتجات.
+                        </p>
+
+                        <a href="products.html?category=offers" class="slide-button">
+                            اكتشفي العروض
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- السهم الموجود على اليمين:
+                 يرجع إلى الصورة السابقة -->
+
+            <button class="slider-arrow slider-arrow-right" id="previousSlide" type="button" aria-label="الصورة السابقة">
+                <svg
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                >
+                    <path
+                        d="M9 5l7 7-7 7"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    />
+                </svg>
+            </button>
+
+            <!-- السهم الموجود على الشمال:
+                 ينقل إلى الصورة التالية -->
+
+            <button class="slider-arrow slider-arrow-left" id="nextSlide" type="button" aria-label="الصورة التالية">
+                <svg
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                >
+                    <path
+                        d="M15 5l-7 7 7 7"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    />
+                </svg>
+            </button>
+
+            <!-- النقاط تُنشأ تلقائيًا من JavaScript -->
+
+            <div class="slider-dots" id="sliderDots" aria-label="اختيار الإعلان"></div>
+
+            <!-- خط مدة عرض الصورة -->
+
+            <div class="slider-progress">
+                <span id="sliderProgressBar"></span>
+            </div>
+
+        </section>
+
+        <!-- =====================================
+             بداية محتوى الصفحة
+        ====================================== -->
+
+        <section class="home-section">
+            <div class="home-section-container">
+
+                <span class="section-label">
+                    اختاري ما يناسب لحظتك
+                </span>
+
+                <h2>اكتشفي عالم MA Moments</h2>
+
+                <p class="categories-intro">
+                    اختاري القسم المناسب واضغطي على الصورة أو اسم القسم لعرض منتجاته.
+                </p>
+
+                <div class="home-categories-grid" aria-label="تصنيفات المنتجات">
+                    <a class="home-category-card" href="products.html?category=pajamas">
+                        <img src="images\categories\pajamas/pajamas.jpg" alt="قسم البيجامات">
+                        <h3>بيجامات</h3>
+                    </a>
+
+                    <a class="home-category-card" href="products.html?category=work-sets">
+                        <img src="images\categories\work-sets\prac.jpeg" alt="قسم الأطقم العملية">
+                        <h3>أطقم عملية</h3>
+                    </a>
+
+                    <a class="home-category-card" href="products.html?category=plus-size">
+                        <img src="images\categories\plussize\plussize1.jpeg" alt="قسم المقاسات الكبيرة">
+                        <h3>مقاسات كبيرة</h3>
+                    </a>
+
+                    <a class="home-category-card" href="products.html?category=beauty">
+                        <img src="images\categories\mackup\mackup1.png" alt="قسم التجميل">
+                        <h3>تجميل</h3>
+                    </a>
+
+                    <a class="home-category-card" href="products.html?category=cups">
+                        <img src="images/categories/cups.jpg" alt="قسم الأكواب">
+                        <h3>أكواب</h3>
+                    </a>
+
+                    <a class="home-category-card" href="products.html?category=candles">
+                        <img src="images/categories/candles.jpg" alt="قسم الشموع">
+                        <h3>شموع</h3>
+                    </a>
+
+                    <a class="home-category-card" href="products.html?category=stationery">
+                        <img src="images/categories/stationery.jpg" alt="قسم المستلزمات المكتبية">
+                        <h3>مستلزمات مكتبية</h3>
+                    </a>
+
+                    <a class="home-category-card" href="products.html?category=happiness-boxes">
+                        <img src="images/categories/happiness-boxes.jpg" alt="قسم بوكسات السعادة">
+                        <h3>بوكسات السعادة</h3>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+</body>
+
+</html>

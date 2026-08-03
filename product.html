@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>تفاصيل المنتج | MA Moments</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/header-component.js" defer></script>
+  <script src="js/product-store.js" defer></script>
+  <script src="js/product-details.js" defer></script>
+</head>
+<body class="product-details-page">
+  <ma-header></ma-header>
+  <main class="page-container product-detail-page-container">
+    <section id="productDetails"></section>
+    <section class="recommendations shein-recommendations">
+      <div class="recommendations-heading">
+        <div>
+          <h2>ربما يعجبك هذا أيضًا</h2>
+          <p>منتجات مختارة عشوائيًا لتكملي تسوقك</p>
+        </div>
+      </div>
+      <div id="recommendedGrid" class="products-grid"></div>
+    </section>
+  </main>
+  <div id="productToast" class="product-toast" role="status" aria-live="polite"></div>
+  <div id="stickyProductBar" class="sticky-product-bar" hidden>
+    <button id="stickyWish" class="sticky-icon-button" type="button" aria-label="إضافة للمفضلة"></button>
+    <button id="stickyCart" class="sticky-cart-button" type="button">أضف إلى عربة التسوق</button>
+  </div>
+</body>
+</html>
