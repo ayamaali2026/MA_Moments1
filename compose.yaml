@@ -1,0 +1,7 @@
+services:
+  ma-moments:
+    build: .
+    container_name: ma-moments
+    ports:
+      - "8080:80"
+    restart: unless-stopped
