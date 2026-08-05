@@ -10,13 +10,10 @@ topology:
 
     web:
       kind: linux
-      image: nginx:alpine
-      binds:
-        - /home/ma-server/MA_Moments1:/usr/share/nginx/html:ro
-      ports:
-        - "8081:80"
+      image: ma-moments:latest
 
   links:
     - endpoints:
         - "client:eth1"
         - "web:eth1"
+        
