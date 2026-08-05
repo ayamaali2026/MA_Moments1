@@ -1,0 +1,18 @@
+name: ma-moments
+
+topology:
+  nodes:
+    client:
+      kind: linux
+      image: alpine:latest
+      exec:
+        - apk add --no-cache curl
+
+    web:
+      kind: linux
+      image: nginx:alpine
+
+  links:
+    - endpoints:
+        - "client:eth1"
+        - "web:eth1"
