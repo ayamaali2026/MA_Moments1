@@ -11,9 +11,10 @@ topology:
     web:
       kind: linux
       image: ma-moments:latest
+      ports:
+        - "8081:80"
 
   links:
     - endpoints:
         - "client:eth1"
         - "web:eth1"
-        
